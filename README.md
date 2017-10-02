@@ -27,11 +27,11 @@ A list of supports can be seen in [THANK_YOU_CREDITS.md].
 [![patreon_logo](https://user-images.githubusercontent.com/1029673/28471651-be40a2ea-6e35-11e7-9b01-e1b4a7d533b3.png)](https://www.patreon.com/vrtk)
 
 
-### Professional Sponsors
+### Sponsors
 
-An extra special thank you to our professional sponsors via [Patreon].
+An extra special thank you to our sponsors via [Patreon].
 
-[![image](https://user-images.githubusercontent.com/1029673/27898738-28f0e226-621f-11e7-9fdb-8618d85ba372.png)](https://www.realestate.com.au) 
+[![image](https://user-images.githubusercontent.com/1029673/27898738-28f0e226-621f-11e7-9fdb-8618d85ba372.png)](https://www.realestate.com.au) [![image](https://user-images.githubusercontent.com/1029673/29113652-8fa11ca4-7ce9-11e7-9e33-88308af369b9.png)](http://alvios.com/)
 
 ## Documentation
 
@@ -103,8 +103,11 @@ For the full contribution guidelines see the [CONTRIBUTING.md] document.
 ## Pull requests
 
  1. [Fork] the project, clone your fork, and configure the remotes.
- 2. Create a new topic branch (from `master`) to contain your feature,
- chore, or fix.
+    1. If you're submitting a bug fix or refactor pull request then
+    target the repository `master` branch.
+    2. If you're submitting a new feature or enhancement that changes
+    functionality then target the next release branch in the
+    repository (which is currently `3.3.0-alpha`).
  3. Commit your changes in logical units.
  4. Make sure all the example scenes are still working.
  5. Push your topic branch up to your fork.

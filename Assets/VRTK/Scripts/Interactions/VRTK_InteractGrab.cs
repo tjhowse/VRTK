@@ -281,14 +281,14 @@ namespace VRTK
 
         protected virtual void ManageGrabListener(bool state)
         {
-            if (controllerEvents != null && subscribedGrabButton != VRTK_ControllerEvents.ButtonAlias.Undefined && (!state || !grabButton.Equals(subscribedGrabButton)))
+            if (controllerEvents != null && subscribedGrabButton != VRTK_ControllerEvents.ButtonAlias.Undefined && (!state || grabButton != subscribedGrabButton))
             {
                 controllerEvents.UnsubscribeToButtonAliasEvent(subscribedGrabButton, true, DoGrabObject);
                 controllerEvents.UnsubscribeToButtonAliasEvent(subscribedGrabButton, false, DoReleaseObject);
                 subscribedGrabButton = VRTK_ControllerEvents.ButtonAlias.Undefined;
             }
 
-            if (controllerEvents != null && state && grabButton != VRTK_ControllerEvents.ButtonAlias.Undefined && !grabButton.Equals(subscribedGrabButton))
+            if (controllerEvents != null && state && grabButton != VRTK_ControllerEvents.ButtonAlias.Undefined && grabButton != subscribedGrabButton)
             {
                 controllerEvents.SubscribeToButtonAliasEvent(grabButton, true, DoGrabObject);
                 controllerEvents.SubscribeToButtonAliasEvent(grabButton, false, DoReleaseObject);
@@ -446,14 +446,6 @@ namespace VRTK
 
         protected virtual void InitSecondaryGrab(VRTK_InteractableObject currentGrabbedObject)
         {
-            if (!currentGrabbedObject.IsValidInteractableController(gameObject, currentGrabbedObject.allowedGrabControllers))
-            {
-                grabbedObject = null;
-                influencingGrabbedObject = false;
-                currentGrabbedObject.Ungrabbed(this);
-                return;
-            }
-
             influencingGrabbedObject = true;
             currentGrabbedObject.Grabbed(this);
         }
